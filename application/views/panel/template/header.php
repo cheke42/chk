@@ -4,6 +4,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Panel Administrador</title>
+
+    
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Latest compiled and minified CSS -->
@@ -42,7 +44,7 @@
 
       <header class="main-header">
         <!-- Logo -->
-        <a href="index2.html" class="logo">
+        <a href="<?php echo site_url('panel') ?>" class="logo">
           <!-- mini logo for sidebar mini 50x50 pixels -->
           <span class="logo-mini"><b>Panel</b></span>
           <!-- logo for regular state and mobile devices -->
@@ -70,7 +72,7 @@
                       <li><!-- start message -->
                         <a href="#">
                           <div class="pull-left">
-                            <img src="../assets/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                            <img src="<?php echo (base_url() . 'assets/img/usuarios/' . ($this->session->userdata('username')) .'/perfil.jpg') ?>" class="img-circle" alt="User Image">
                           </div>
                           <h4>
                             Support Team
@@ -246,7 +248,7 @@
               <!-- User Account: style can be found in dropdown.less -->
               <li class="dropdown user user-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  <img src="../assets/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+                  <img src="<?php echo (base_url() . 'assets/img/usuarios/' . ($this->session->userdata('username')) .'/perfil.jpg') ?>" class="user-image" alt="User Image">
                   <span class="hidden-xs">
                     <?php 
                       $resultado = $this->usuario_model->getUsuario($this->session->userdata('username'));
@@ -257,7 +259,7 @@
                 <ul class="dropdown-menu">
                   <!-- User image -->
                   <li class="user-header">
-                    <img src="../assets/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                    <img src="<?php echo (base_url() . 'assets/img/usuarios/' . ($this->session->userdata('username')) .'/perfil.jpg') ?>" class="img-circle" alt="User Image">
                     <p>
                       Alexander Pierce - Web Developer
                       <small>Member since Nov. 2012</small>
@@ -287,9 +289,7 @@
                 </ul>
               </li>
               <!-- Control Sidebar Toggle Button -->
-              <li>
-                <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
-              </li>
+              
             </ul>
           </div>
         </nav>
@@ -301,7 +301,7 @@
           <!-- Sidebar user panel -->
           <div class="user-panel">
             <div class="pull-left image">
-              <img src="../assets/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+              <img src="<?php echo (base_url() . 'assets/img/usuarios/' . ($this->session->userdata('username')) .'/perfil.jpg') ?>" class="img-circle" alt="User Image">
             </div>
             <div class="pull-left info">
               <p>

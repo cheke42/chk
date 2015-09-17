@@ -29,7 +29,6 @@
               <!-- TABLE: LATEST ORDERS -->
               <div class="box box-info">
                 <div class="box-header with-border">
-                  <h3 class="box-title">Latest Orders</h3>
                   <div class="box-tools pull-right">
                     <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
                     <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
@@ -37,19 +36,22 @@
                 </div><!-- /.box-header -->
                 <div class="box-body">
                   <form action="<?php echo site_url("login/update"); ?>" method="POST">
+                      <div class="form-group text-center">
+                        <img src="<?php echo (base_url() . 'assets/img/usuarios/' . ($this->session->userdata('username')) .'/perfil.jpg') ?>" class="img-thumbnail img-responsive" alt="Super Mario Bros.®" width="304" height="236"> 
+                      </div>
                       <div class="form-group">
                         <label for="exampleInputEmail1">Usuario</label>
-                        <input type="text" class="form-control" id="input-username" value="<?php echo ($this->session->userdata('username')); ?>">
+                        <input type="text" class="form-control" id="input-username" value="<?php echo ($this->session->userdata('username')); ?> " readonly>
                       </div>
                       <div class="form-group">
                         <label for="exampleInputEmail1">Nombre</label>
-                        <input type="text" class="form-control" id="nuevo-nombre" value="<?php 
+                        <input type="text" class="form-control" name="nuevo-nombre" id="nuevo-nombre" value="<?php 
                       $resultado = $this->usuario_model->getUsuario($this->session->userdata('username'));
                       echo(($resultado->first_row()->nombre));?>">
                       </div>
                       <div class="form-group">
                         <label for="exampleInputEmail1">Apellido</label>
-                        <input type="text" class="form-control" id="nuevo-apellido" value="<?php 
+                        <input type="text" class="form-control" name="nuevo-apellido" id="nuevo-apellido" value="<?php 
                       $resultado = $this->usuario_model->getUsuario($this->session->userdata('username'));
                       echo(($resultado->first_row()->apellido));?>">
                       </div>
@@ -59,10 +61,7 @@
                       
                     </form>
                 </div><!-- /.box-body -->
-                <div class="box-footer clearfix">
-                  <a href="javascript::;" class="btn btn-sm btn-info btn-flat pull-left">Place New Order</a>
-                  <a href="javascript::;" class="btn btn-sm btn-default btn-flat pull-right">View All Orders</a>
-                </div><!-- /.box-footer -->
+               
               </div><!-- /.box -->
             </div><!-- /.col -->
 
@@ -129,3 +128,4 @@
 
       </div><!-- /.content-wrapper -->
       
+

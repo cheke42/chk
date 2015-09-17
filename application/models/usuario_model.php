@@ -20,21 +20,21 @@ class Usuario_model extends CI_Model{
 	}
 
 	public function update($nombre,$apellido){
-		echo ($nombre . ' - ' . $apellido);
+		echo ($nombre . ' - ' . $apellido . ' DESDE MODELO');
+
+		$data = array(
+               'nombre' => $nombre,
+               'apellido' => $apellido,
+            );
+		$this->db->where('username', $this->session->userdata('username'));
+		$this->db->update('usuarios', $data);
+		redirect('panel/perfil'); 
 	}
 
 	public function getUsuario($usuario){
 
 		$this->db->where('username',$usuario);
 		return $query = $this->db->get('usuarios');
-		
-		/*foreach ($query->result() as $row)
-		{
-			echo ($row->nombre . ' ');
-			echo ($row->apellido . '<br>');
-
-		}*/
-
 	}
 }
 

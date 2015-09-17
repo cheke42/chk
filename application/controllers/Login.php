@@ -30,6 +30,7 @@ class Login extends CI_Controller{
 	}
 
 	public function update(){
+
 		$this->load->model('usuario_model');
 		$this->usuario_model->update($_POST['nuevo-nombre'], $_POST['nuevo-apellido']);
 	}	

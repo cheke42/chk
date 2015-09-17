@@ -39,6 +39,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<a href="#" data-toggle="modal" data-target="#myModal">conectarse</a>
 		<?php endif; ?>
 
+		
+
 <!-- ||||||||||||||||| Intentando traer los datos||||||||||||||||||-->
 
 
